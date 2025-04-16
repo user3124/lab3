@@ -48,5 +48,26 @@ namespace hw3
             }
             return result;
         }
+
+        public static SquareMatrix operator +(SquareMatrix matrixA, SquareMatrix matrixB)
+        {
+            if (matrixA == null || matrixB == null)
+                throw new ArgumentNullException("Обе матрицы должны быть инициализированы.");
+
+            if (matrixA.Size != matrixB.Size)
+                throw new MatrixSizeMismatchException();
+
+            SquareMatrix resultMatrix = new SquareMatrix(matrixA.Size, 0, 0);
+
+            for (int row = 0; row < matrixA.Size; ++row)
+            {
+                for (int column = 0; column < matrixA.Size; ++column)
+                {
+                    resultMatrix.Matrix[row, column] = matrixA.Matrix[row, column] + matrixB.Matrix[row, column];
+                }
+            }
+
+            return resultMatrix;
+        }
     }
 }

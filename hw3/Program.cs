@@ -25,6 +25,15 @@ namespace hw3
 
                 Console.WriteLine("\nСгенерированная матрица:");
                 Console.WriteLine(testMatrix.ToString());
+
+                SquareMatrix secondMatrix = new SquareMatrix(matrixSize, minimumValue, maximumValue);
+                Console.WriteLine("\nВторая матрица:");
+                Console.WriteLine(secondMatrix);
+
+                SquareMatrix sumMatrix = testMatrix + secondMatrix;
+                Console.WriteLine("\nРезультат сложения:");
+                Console.WriteLine(sumMatrix);
+
             }
             catch (FormatException)
             {
