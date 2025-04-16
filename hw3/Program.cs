@@ -43,4 +43,13 @@ namespace hw3
             Console.ReadKey();
         }
     }
+
+    public class MatrixSizeMismatchException : Exception
+    {
+        public MatrixSizeMismatchException() : base("Размеры матриц не совпадают. Сложение невозможно.") { }
+
+        public MatrixSizeMismatchException(string message) : base(message) { }
+
+        public MatrixSizeMismatchException(string message, Exception inner) : base(message, inner) { }
+    }
 }
